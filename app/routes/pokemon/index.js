@@ -3,7 +3,7 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   async model() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/')
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=100')
 
     // console.log(await response.json())'
     // null.name;

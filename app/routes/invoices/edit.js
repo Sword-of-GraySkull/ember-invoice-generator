@@ -11,7 +11,7 @@ export default Route.extend({
       let invoiceData = this.invoiceList.invoices[invoice_id-1];
       return invoiceData;
     }
-    
+
     this.transitionTo('invoices.not-found-invoice');
   }
 });

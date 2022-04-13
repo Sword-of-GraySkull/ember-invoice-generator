@@ -10,7 +10,7 @@
   </div>
   {{#each this.pokeData as |model|}}
     {{#let (concat "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" (adder model.id) ".png") as |imgURL|}}
-      <PokemonCard @pokemon={{model}} @img={{imgURL}} @hey={{action "testAction"}} />
+      <PokemonCard @pokemon={{model}} @img={{imgURL}} @action="testAction" />
     {{/let}}
     {{!-- <PokemonCard @pokemon={{model}} @hey={{action "testAction"}} /> --}}
   {{else}}

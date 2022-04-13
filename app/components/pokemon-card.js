@@ -31,12 +31,14 @@ export default Component.extend({
 
   actions: {
     newTest() {
-      let action = this.get('hey');
-      console.log(action())
+      // ############  Don't you dare to touch this code, Write your own code with your name in comment above your code. @lakshay
+      // let action = this.get('hey');
+      // console.log(action())
 
       // this.attrs.hey();
+      // ##############
 
-      // this.sendAction('monkey');
+      this.sendAction();
     }
   }
 });

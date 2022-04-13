@@ -1,0 +1,81 @@
+<div class="row">
+  {{#each this.list as |item|}}
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Template #{{item}}</div>
+          <div>
+            <img src={{imgSrc}} alt="Template Preview" >
+          </div>
+          <div class="card-text mt-3">{{@cardBody}}</div>
+        </div>
+        <div class="card-body text-center card-toggle-footer">
+          <LinkTo @route="invoices" class="btn btn-primary template-picker-button">Use this template</LinkTo>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{!--
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">Template #1</div>
+        <div>
+          <img src="" alt="Template Preview" >
+        </div>
+        <div class="card-text mt-3">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          reprehenderit.
+        </div>
+        <div class="card-body text-center card-toggle-footer">
+          <button class="btn btn-primary">Use this Template</button>
+        </div>
+      </div>
+      <div class="card-body text-center card-toggle-footer">
+        <button class="btn btn-primary">Use this Template</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">Template #2</div>
+        <div>
+          <img
+            src=""
+            alt="Template Preview"
+          />
+        </div>
+        <div class="card-text mt-3">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          reprehenderit.
+        </div>
+      </div>
+      <div class="card-body text-center card-toggle-footer">
+        <button class="btn btn-primary">Use this Template</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">Template #3</div>
+        <div>
+          <img
+            src="https://dreamvilla.life/wp-content/uploads/2017/07/dummy-profile-pic.png"
+            alt="Template Preview"
+          />
+        </div>
+        <div class="card-text mt-3">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          reprehenderit.
+        </div>
+      </div>
+      <div class="card-body text-center card-toggle-footer">
+        <button class="btn btn-primary">Use this Template</button>
+      </div>
+    </div>
+  </div>
+</div> --}}

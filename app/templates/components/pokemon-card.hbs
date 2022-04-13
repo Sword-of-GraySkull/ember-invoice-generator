@@ -1,0 +1,17 @@
+<div class="card mt-4 p-3">
+  <div class="card-body p-4">
+    <div class="media">
+      {{!-- <img src={{pokemon.imgURL}} alt="Pokeman img"> --}}
+      <img src={{img}} alt="Pokemon img" >
+      <div class="media-body px-4">
+        <h2>{{pokemon.name}}</h2>
+        <LinkTo @route="pokemon.view" @model={{pokemon.name}}>
+          more details
+        </LinkTo>
+        <button type="button" {{action "newTest"}} >send action</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{yield}}

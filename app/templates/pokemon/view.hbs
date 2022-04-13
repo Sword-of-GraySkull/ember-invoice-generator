@@ -1,0 +1,17 @@
+<LinkTo @route="pokemon.index">Pokemon route</LinkTo>
+<div class="container mt-4 pokemon-container p-4">
+  <h3>Abilities</h3>
+  <ul>
+    {{#each this.model.abilities  as |ability|}}
+      <li>{{ability.ability.name}}</li>
+    {{/each}}
+  </ul>
+  <h3>Base experience: {{this.model.base_experience}}</h3>
+  <h3>Height: {{this.model.height}}</h3>
+  <h3>Moves</h3>
+  <ul>
+    {{#each this.model.moves  as |move|}}
+      <li>{{move.move.name}}</li>
+    {{/each}}
+  </ul>
+</div>

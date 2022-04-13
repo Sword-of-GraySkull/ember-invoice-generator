@@ -1,0 +1,60 @@
+<section class="create-invoice">
+  <div class="container text-center">
+    <h2 class="display-4">Create Invoices in one click</h2>
+    <h3>New Invoice</h3>
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row">Customer Name</th>
+          <td><Input @value={{this.model.customerName}} type="text" id="customerName" /></td>
+        </tr>
+        <tr>
+          <th scope="row">Invoice Number</th>
+          <td>{{input type="text" class="input" value=this.model.invoiceNumber id="invoiceNumber"}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Order No</th>
+          <td>{{input type="text" class="input" value=this.model.orderNo id="orderNo"}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Invoice Date</th>
+          <td>{{input type="text" class="input" value=this.model.invoiceDate id="invoiceDate"}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Salesperson</th>
+          <td>{{input type="text" class="input" value=this.model.salesPerson id="salesPerson"}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Subject</th>
+          <td><Textarea @value={{this.model.subject}} @cols="30" @rows="2" id="subject"/></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="item-list">
+      <table class="table-bordered">
+        <thead>
+          <th>Item Details</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Amount</th>
+        </thead>
+        <tbody>
+          {{#each this.itemList.items as |item index|}}
+            <tr>
+              <td><input type="text" id="itemName" placeholder="Item Name" value={{item.itemName}} index={{index}} onblur={{action "updateItemName"}}></td>
+              <td><input type="text" id="quantity" value={{item.quantity}} index={{index}} onblur={{action "updateQuantity"}}></td>
+              <td><input type="text" id="rate" value={{item.rate}} index={{index}} onblur={{action "updateRate"}}></td>
+              <td><input type="text" id="amount" index={{index}} value={{item.amount}} disabled={{true}}></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="text-left mt-1">
+        <button class="btn btn-primary addItemRow p-2" {{action "addNewRowItem"}}>Add item</button>
+      </div>
+    </div>
+    <div class="text-right mt-4">
+      <button type="button" class="btn btn-primary create-invoice-button" {{action "createInvoice" }}>Create Invoice</button>
+    </div>
+  </div>
+</section>

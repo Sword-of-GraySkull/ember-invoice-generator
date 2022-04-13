@@ -1,0 +1,36 @@
+<div class="container">
+  <table class="table table-borderless">
+    <tbody>
+      {{#let this.model as |invoice|}}
+        <tr>
+          <th scope="row">Customer Name</th>
+          {{!-- <td><input type="text" width="100%" id="customerName" value=this.model.customerName></td> --}}
+          <td><Input @value={{invoice.customerName}} type="text" /></td>
+        </tr>
+        <tr>
+          <th scope="row">Invoice Number</th>
+          <td>{{input type="text" class="input" value=invoice.invoiceNumber}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Order No</th>
+          <td>{{input type="text" class="input" value=invoice.orderNo}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Invoice Date</th>
+          <td>{{input type="text" class="input" value=invoice.invoiceDate}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Salesperson</th>
+          <td>{{input type="text" class="input" value=invoice.salesPerson}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Subject</th>
+          <td><Textarea @value={{invoice.subject}} @cols="30" @rows="2" /></td>
+        </tr>
+      {{/let}}
+    </tbody>
+  </table>
+  <div>
+    <button class="btn btn-primary" {{action "saveChanges"}}>Save Changes</button>
+  </div>
+</div>

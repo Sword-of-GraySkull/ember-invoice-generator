@@ -1,0 +1,27 @@
+<section class="create-invoice">
+  <div class="container text-center">
+    <h2 class="display-4">Create Invoices in one click</h2>
+    <h3>New Invoice</h3>
+    <div class="item-list">
+      <table class="table-bordered">
+        <thead>
+          <th>Item Details</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Amount</th>
+        </thead>
+        <tbody>
+          {{#each this.itemList.items as |item index|}}
+            <tr>
+              <td><input type="text" id="itemName" placeholder="Item Name" value={{item.itemName}} index={{index}} onblur={{action "updateItemName"}}></td>
+              <td><input type="text" id="quantity" value={{item.quantity}} index={{index}} onblur={{action "updateQuantity"}}></td>
+              <td><input type="text" id="rate" value={{item.rate}} index={{index}} onblur={{action "updateRate"}}></td>
+              <td><input type="text" id="amount" index={{index}} value={{item.amount}} disabled={{true}}></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <button class="btn btn-primary p-2" {{action "addNewRowItem"}}>Add item</button>
+    </div>
+  </div>
+</section>

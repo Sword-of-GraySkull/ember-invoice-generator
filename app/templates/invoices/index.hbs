@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="text-center">Invoices</h1>
+  {{#each this.model as |model|}}
+    <div class="card">
+      <div class="card-body">
+        <h4 id="invoice">Invoice #{{model.id}}</h4>
+        <p id="customerName">Customer Name: {{model.customerName}}</p>
+        <p id="invoiceNumber">Invoice Number: {{model.invoiceNumber}}</p>
+        <p id="orderNo">Order No: {{model.orderNo}}</p>
+        <LinkTo @route="invoices.invoice" class="view-invoice-link" @model={{model.id}}>more...</LinkTo>
+        <LinkTo @route="invoices.edit" class="edit-invoice-link" @model={{model.id}}>edit invoice</LinkTo>
+      </div>
+    </div>
+  {{else}}
+    <h3 class="text-center mt-4">There aren't any invoices yet. Go ahead and <LinkTo @route="invoices.create" class="create-invoice-link">create</LinkTo> one.</h3>
+  {{/each}}
+</div>
+
+{{!-- {{outlet}} --}}

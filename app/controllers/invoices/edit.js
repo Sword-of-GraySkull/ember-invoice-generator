@@ -14,6 +14,7 @@ export default Controller.extend({
         invoiceDate: this.model.invoiceDate,
         salesPerson: this.model.salesPerson,
         subject: this.model.subject,
+        items: this.model.items,
       };
 
       this.invoiceList.updateInvoice(invoiceData);

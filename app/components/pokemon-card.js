@@ -38,7 +38,7 @@ export default Component.extend({
       // this.attrs.hey();
       // ##############
 
-      this.sendAction();
+      this.sendAction("monkey");
     }
   }
 });

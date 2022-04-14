@@ -1,39 +1,66 @@
 import Controller from '@ember/controller';
-import { oneWay } from '@ember/object/computed';
+import { alias } from '@ember/object/computed';
+import { computed } from '@ember/object';
 
 export default Controller.extend({
   queryParams: ['pokemonName'],
   pokemonName: '',
 
-  pokeData: null,
-  lastSearch: '',
-  searchTerm: oneWay('pokemonName'),
-
-  search() {
+  pokeData: computed('searchTerm', function() {
     let data = this.get('model');
     let searchPattern = new RegExp(this.get('searchTerm'));
     data = data.filter((item, i) => {
       return item.name.match(searchPattern);
     })
-    this.set('pokemonName', this.get('searchTerm'))
-    // console.log(data);
-    this.set('pokeData', data);
-    // this.transitionToRoute('invoices.index')
-    // this.transitionToRoute('pokemon.index', {queryParams: {pokemonName: this.pokemonName}})
-    this.set('lastSearch', this.get('searchTerm'));
+    return data;
+  }),
 
-  },
+  lastSearch: '',
+  searchTerm: alias('pokemonName'),
 
   actions: {
-    searchPokemon() {
-      this.search();
-    },
-
     testAction() {
       alert('tested successfully')
     }
   }
 });
+
+// export default Controller.extend({
+//   queryParams: ['pokemonName'],
+//   pokemonName: '',
+
+//   pokeData: null,
+//   lastSearch: '',
+//   searchTerm: oneWay('pokemonName'),
+
+//   search() {
+//     let data = this.get('model');
+//     let searchPattern = new RegExp(this.get('searchTerm'));
+//     data = data.filter((item, i) => {
+//       return item.name.match(searchPattern);
+//     })
+//     this.set('pokemonName', this.get('searchTerm'))
+//     // console.log(data);
+//     this.set('pokeData', data);
+//     // this.transitionToRoute('invoices.index')
+//     // this.transitionToRoute('pokemon.index', {queryParams: {pokemonName: this.pokemonName}})
+//     this.set('lastSearch', this.get('searchTerm'));
+
+//   },
+
+//   actions: {
+//     searchPokemon() {
+//       this.search();
+//     },
+
+//     testAction() {
+//       alert('tested successfully')
+//     }
+//   }
+// });
+
+
+// V 0.0.0
 
 // queryParams: ['pokemonName'],
 //   pokemonName: '',

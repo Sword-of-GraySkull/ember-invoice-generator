@@ -5,12 +5,13 @@
         {{input value=searchTerm action="searchPokemon"}}
         {{input type="submit" class="btn btn-primary" value="Search"}}
       </form> --}}
-      <Input @value={{searchTerm}} @placeholder="Type in the pokemon name" @input={{action "searchPokemon"}} />
+      <Input @value={{searchTerm}} @placeholder="Type in the pokemon name" />
+      {{!-- <Input @value={{searchTerm}} @placeholder="Type in the pokemon name" @input={{action "searchPokemon"}} /> --}}
     </div>
   </div>
   {{#each this.pokeData as |model|}}
     {{#let (concat "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" (adder model.id) ".png") as |imgURL|}}
-      <PokemonCard @pokemon={{model}} @img={{imgURL}} @action="testAction" />
+      <PokemonCard @pokemon={{model}} @img={{imgURL}} @monkey="testAction" />
     {{/let}}
     {{!-- <PokemonCard @pokemon={{model}} @hey={{action "testAction"}} /> --}}
   {{else}}

@@ -15,6 +15,7 @@ export default Route.extend({
     data.forEach((item,i) => {
       item.id = i;
       data[i] = item;
+      // throw Error("mesaaaaaaaaaage");
     });
 
     return data;
@@ -23,10 +24,9 @@ export default Route.extend({
 
   setupController(controller, model) {
     this._super(controller, model);
-    controller.set('pokeData', model);
-    controller.search();
+    // controller.set('pokeData', model);
+    // controller.search();
 
-    // throw Error("mesaaaaaaaaaage");
   },
 
   // actions: {

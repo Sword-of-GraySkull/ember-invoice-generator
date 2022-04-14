@@ -8,15 +8,15 @@ export default Route.extend({
     let { view_id } = params;
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${view_id}/`);
-    if(response.status !== '404') {
+    if(response.status !== 404) {
       const jsonData = await response.json();
+      // throw Error("io");
       return jsonData;
     }
     this.transitionTo('pokemon.not-found-pokemon');
     // this.transitionTo('not-found');
 
     return response
-
 
   },
 
@@ -27,13 +27,13 @@ export default Route.extend({
   //     // return true;
   //   },
 
-    // error(error, transition) {
-    //   if(error) {
-    //     // console.log(error)
-    //     this.controllerFor('error').set('error', error);
-    //     this.transitionTo('error');
-    //     // return true;
-    //   }
-    // }
+    error(error, transition) {
+      if(error) {
+        // console.log(error)
+        // this.controllerFor('error').set('error', error);
+        // this.transitionTo('error');
+        return true;
+      }
+    }
   }
 });

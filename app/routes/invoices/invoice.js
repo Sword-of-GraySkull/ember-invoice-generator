@@ -14,7 +14,8 @@ export default Route.extend({
     this.transitionTo('invoices.not-found-invoice');
   },
 
-  setupController(controller, model) {
+  setupController(controller) {
+    this._super(...arguments);
     controller.set('total', this.itemList.total);
   }
 });

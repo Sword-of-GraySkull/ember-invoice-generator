@@ -12,5 +12,9 @@ export default Route.extend({
     }
 
     this.transitionTo('invoices.not-found-invoice');
+  },
+
+  setupController(controller, model) {
+    controller.set('total', this.itemList.total);
   }
 });

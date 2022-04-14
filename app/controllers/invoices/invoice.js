@@ -3,6 +3,8 @@ import Controller from '@ember/controller';
 import html2pdf from 'html2pdf.js';
 
 export default Controller.extend({
+  total: null,
+
   actions: {
     printPdf() {
       var element = document.getElementById('printInvoice');

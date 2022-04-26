@@ -1,10 +1,13 @@
 import Controller from '@ember/controller';
-import { alias } from '@ember/object/computed';
 import { computed } from '@ember/object';
 
 export default Controller.extend({
-  queryParams: ['pokemonName'],
-  pokemonName: '',
+  queryParams: [{
+    searchTerm: {
+      as: 'pokemonName'
+    }
+  }],
+  searchTerm: '',
 
   pokeData: computed('searchTerm', function() {
     let data = this.get('model');
@@ -16,7 +19,6 @@ export default Controller.extend({
   }),
 
   lastSearch: '',
-  searchTerm: alias('pokemonName'),
 
   actions: {
     testAction() {

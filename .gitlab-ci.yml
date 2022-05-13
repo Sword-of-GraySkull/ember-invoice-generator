@@ -13,6 +13,7 @@ build:
       - build/
 
 pages:
+  image: alpine:latest
   stage: deploy
   script:
     - mv build public

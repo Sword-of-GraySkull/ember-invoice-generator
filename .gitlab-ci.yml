@@ -3,6 +3,7 @@ stages:
   - deploy
 
 build:
+  image: node:14.18.2-alpine
   stage: build
   script:
     - npm i

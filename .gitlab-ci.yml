@@ -1,0 +1,21 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm i
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+
+pages:
+  stage: deploy
+  script:
+    - mv build public
+    - cp public/index.html public/404.html
+  artifacts:
+    paths:
+      - build/

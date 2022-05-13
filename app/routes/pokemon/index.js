@@ -2,6 +2,13 @@ import Route from '@ember/routing/route';
 // import { inject as service } from '@ember/service';
 
 export default Route.extend({
+
+  // queryParams : {
+  //   searchTerm: {
+  //     refreshModel: true
+  //   }
+  // },
+
   async model() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=100')
 
@@ -17,6 +24,7 @@ export default Route.extend({
       data[i] = item;
       // throw Error("mesaaaaaaaaaage");
     });
+    console.log("heelo");
 
     return data;
   },
